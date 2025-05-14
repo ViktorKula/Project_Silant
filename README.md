@@ -30,3 +30,8 @@ npm install
 ```
 npm start
 ```
+
+Logins & password:
+```
+backend/logins.txt
+```
