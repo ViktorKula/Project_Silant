@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef, useEffect, useId, useRef } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
 import classes from './MyLabeledSelect.module.scss';
 import { makeClassName } from "../../../utils/classes";
@@ -25,9 +25,6 @@ const MyLabeledSelect: React.FC<MyLabeledSelectProps> = ({id, labelCaption = "",
         if (setValue) {
             setValue(value);
         }
-        // if (setIsError) {
-        //     setIsError(false);
-        // }
     }
 
     return (

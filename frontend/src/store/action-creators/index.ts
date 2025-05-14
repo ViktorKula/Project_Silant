@@ -13,7 +13,7 @@ import * as CarsActionCreators from "./cars";
 import * as MaintenanceActionCreators from "./maintenances";
 import * as ReclamationActionCreators from "./reclamations";
 
-export default {
+const actionCreators =  {
     ...AccountActionCreators,
     ...AccountInfoActionCreators,
     ...AuxEntriesActionCreators,
@@ -29,3 +29,5 @@ export default {
     ...MaintenanceActionCreators,
     ...ReclamationActionCreators,
 }
+
+export default actionCreators;
