@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb4747a1-2a7b-4a65-a85c-6554363b651e" name="Changes" comment="add logins">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/UI/MyLabeledSelect/MyLabeledSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UI/MyLabeledSelect/MyLabeledSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/action-creators/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/action-creators/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/auth.ts" afterDir="false" />
-    </list>
+    <list default="true" id="fb4747a1-2a7b-4a65-a85c-6554363b651e" name="Changes" comment="add error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +85,7 @@
       <updated>1747247954308</updated>
       <workItem from="1747247957704" duration="2761000" />
       <workItem from="1747252808673" duration="3661000" />
-      <workItem from="1747257257230" duration="685000" />
+      <workItem from="1747257257230" duration="1005000" />
     </task>
     <task id="LOCAL-00001" summary="add app">
       <option name="closed" value="true" />
@@ -109,7 +103,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747255249966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add error">
+      <option name="closed" value="true" />
+      <created>1747258137927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747258137927</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +120,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add app" />
     <MESSAGE value="add logins" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logins" />
+    <MESSAGE value="add error" />
+    <option name="LAST_COMMIT_MESSAGE" value="add error" />
   </component>
 </project>
