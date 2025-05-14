@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.views import APIView
 
 from main.models import Client, ServiceCompany, Manager
 
@@ -16,6 +18,7 @@ def logout(request):
             return Response({"Message": "Unauthorized user"}, status=status.HTTP_401_UNAUTHORIZED)
 
 @api_view(["GET",])
+@permission_classes([IsAuthenticated])
 def account_info(request):
     if request.method == "GET":
         user = request.user
@@ -44,4 +47,5 @@ def account_info(request):
             "account_type": account_type,
             "name": name,
             "username": user.username
-            })
+        })
+

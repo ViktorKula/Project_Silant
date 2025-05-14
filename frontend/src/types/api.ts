@@ -34,12 +34,6 @@ export interface AccountInfoResponseData {
     username: string;
 }
 
-// export interface ReferenceBookRecord {
-//     id: number;
-//     name: string;
-//     description: string;
-// }
-
 export enum AuxEntryType {
     AUX_ENTRY_TYPE_UNKNOWN = "AUX_ENTRY_TYPE_UNKNOWN",
     AUX_ENTRY_TYPE_CAR_MODEL = "AUX_ENTRY_TYPE_CAR_MODEL",

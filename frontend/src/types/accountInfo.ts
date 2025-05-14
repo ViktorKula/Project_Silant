@@ -49,6 +49,5 @@ export const getAccountTypeCaption = (accountType: AccountType): string => {
             return "Сервисная компания"; 
         default:
             return "";
-            // throw new Error("getAccountTypeCaption: wrong accountType!")
     }
 }
