@@ -1,0 +1,19 @@
+@import "../../../../styles/commonTypes.scss";
+
+.id {
+    @include table_cell;
+    // width: 40px;
+    flex: 0 0 40px;
+}
+
+.name {
+    @include table_cell;    
+    // width: 100px;
+    flex: 1 1 100px;
+}
+
+.description {
+    @include table_cell;
+    // width: 200px;
+    flex: 1 1 400px;
+}

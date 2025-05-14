@@ -1,0 +1,14 @@
+@import "../../../styles/commonTypes.scss";
+
+.btn_common {
+    border-radius: 5px;
+    border: 1px solid $color_red;
+    background-color: $color_blue;
+    color: $color_white;
+
+    font-family: $fontname;
+    font-size: 16px;
+    padding: 10px;
+
+    cursor: pointer;
+}

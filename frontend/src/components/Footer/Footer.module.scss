@@ -1,0 +1,51 @@
+@import "../../styles/commonTypes.scss";
+
+.footer_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    max-width: 1440px;
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: $color_blue;
+    border: 2px solid $color_red;
+    border-radius: 10px;
+
+    margin-top: 12px;
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    font-family: $fontname;
+    color: $color_white;
+    
+    @media (max-width: 420px) {
+        height: 50px;
+        padding: 12px;
+    }
+
+    .left {
+        font-size: 18px;
+        
+        @media (max-width: 420px) {
+            font-size: 12px;
+        }
+    }
+
+    .right {
+        font-size: 18px;
+
+        @media (max-width: 420px) {
+            font-size: 12px;
+        }
+    }
+}

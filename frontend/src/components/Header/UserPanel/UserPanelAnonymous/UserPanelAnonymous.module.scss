@@ -1,0 +1,35 @@
+@import "../../../../styles/commonTypes.scss";
+
+// based on myModalContent on MyModal.module.css
+.menu_background {
+    padding: 25px;
+    background: $color_white;
+    border-radius: 16px;
+    min-width: 250px;
+}
+
+.user_panel_anonymous {
+    width: 250px;
+    height: 100px;
+
+    border: 1px solid $color_red;
+    border-radius: 5px;
+
+    font-family: $fontname;
+
+    margin-right: 10px;
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // background-color: $color_white;
+
+    .authorize_link {
+        color: $color_red;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+

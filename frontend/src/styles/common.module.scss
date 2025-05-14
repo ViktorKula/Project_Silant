@@ -1,0 +1,123 @@
+@import "./commonTypes.scss";
+
+.filter_form_container {
+    display: flex;
+    justify-content: center;
+}
+
+.filter_form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 340px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+
+    border: 2px solid $color_red;
+    border-radius: 5px;
+}
+
+.table_container {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 15px;
+}
+
+.table {
+    width: 100%;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: $fontname;
+
+    border: 1px solid $color_blue;
+
+    .item {
+        display: flex;
+        flex-direction: row;
+
+        .header {
+            // display: flex;
+            align-items: center;
+            // justify-content: center;
+            justify-content: space-between;
+            flex-direction: column;
+    
+            background-color: $color_blue;
+            border: 1px solid $color_red;
+            color: $color_red;
+            font-size: 13px;
+    
+            // height: 100%;
+            min-height: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+    
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // white-space: nowrap;
+        }
+    
+        .cell {
+            // display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            border: 1px solid $color_blue;
+            color: $color_blue;
+            font-size: 12px;
+            text-decoration: none;
+    
+            // height: 100%;
+            min-height: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            // white-space: nowrap;
+        }
+    }
+}
+
+.add_new_container {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 20px;
+}
+
+.add_new {
+    width: 200px;
+}
+
+.one_item_form_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    // max-width: 1240px;
+    width: 100%;
+    border: 1px solid green;
+}
+
+.one_item_form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    // width: 340px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+
+    border: 2px solid $color_red;
+    border-radius: 5px;
+}

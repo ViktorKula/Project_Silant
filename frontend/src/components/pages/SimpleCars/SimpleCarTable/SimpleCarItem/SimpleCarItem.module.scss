@@ -1,0 +1,91 @@
+@import "../../../../../styles/commonTypes.scss";
+
+.id {
+    @include table_cell;    
+    // width: 40px;
+    flex: 0 0 40px;
+}
+
+.car_model__name {
+    @include table_cell;
+    // width: 70px;
+    flex: 1 1 70px;
+}
+
+.car_num {
+    @include table_cell;
+    // width: 60px;
+    flex: 1 1 60px;
+}
+
+.engine_model__name {
+    @include table_cell;
+    // width: 90px;
+    flex: 1 1 90px;
+    
+    @media (max-width: 610px) {
+        display: none;
+    }
+}
+
+.engine_num {
+    @include table_cell;
+    // width: 60px;
+    flex: 1 1 60px;
+}
+
+.transmission_model__name {
+    @include table_cell;
+    // width: 100px;
+    flex: 1 1 100px;
+
+    @media (max-width: 710px) {
+        display: none;
+    }
+}
+
+.transmission_num {
+    @include table_cell;
+    // width: 90px;
+    flex: 1 1 90px;
+}
+
+.main_bridge_model__name {
+    @include table_cell;
+    // width: 100px;
+    flex: 1 1 100px;
+
+    @media (max-width: 810px) {
+        display: none;
+    }
+}
+
+.main_bridge_num {
+    @include table_cell;
+    // width: 90px;
+    flex: 1 1 90px;
+
+    @media (max-width: 420px) {
+        display: none;
+    }
+}
+
+.steerable_bridge_model__name {
+    @include table_cell;
+    // width: 100px;
+    flex: 1 1 100px;
+
+    @media (max-width: 910px) {
+        display: none;
+    }
+}
+
+.steerable_bridge_num {
+    @include table_cell;
+    // width: 100px;
+    flex: 1 1 100px;
+
+    @media (max-width: 520px) {
+        display: none;
+    }
+}

@@ -1,0 +1,64 @@
+$color_blue: #163E6C;
+$color_red: #D20A11;
+$color_white: #EBE6D6;
+
+$fontname: "Astra";
+
+@mixin filter_form {
+    width: 320px;
+}
+
+@mixin table_cell () {
+    display: flex;
+}
+
+// @mixin only_desktop {
+//     display: none;
+//     @media screen and (min-width: $mobile_width)  {
+//         display: block;
+//     }
+// }
+
+// @mixin only_mobile {
+//     display: block;
+//     @media screen and (min-width: $mobile_width)  {
+//         display: none;
+//     }
+// }
+
+// @mixin only_desktop_flex {
+//     display: none;
+//     @media screen and (min-width: $mobile_width)  {
+//         display: flex;
+//     }
+// }
+
+// @mixin only_mobile_flex {
+//     display: flex;
+//     @media screen and (min-width: $mobile_width)  {
+//         display: none;
+//     }
+// }
+
+// @mixin sub_heading_description {
+//     font-family: $fontname2;
+//     font-weight: 400;
+//     letter-spacing: 0.01em;
+//     font-size: 18px;
+//     line-height: 21.78px;
+
+//     @media screen and (min-width: $mobile_width)  {
+//         font-size: 20px;
+//         line-height: 24.2px;
+//     }
+// }
+
+// @mixin backward {
+//     position: relative;
+//     z-index: -1;
+// }
+
+// @mixin backward_absolute {
+//     position: absolute;
+//     z-index: -1;
+// }

@@ -1,0 +1,361 @@
+from main.models import *
+from main.debug_helpers import *
+# from django.contrib.auth.models import User
+
+User.objects.exclude(username="admin").delete()
+
+# Clients
+cl_zander = create_client(name='АО "Зандер"', username="client1", email="client1@clients.aa", password="client1psw")
+cl_trudnikov = create_client(name='ИП Трудников С.В.', username="client2", email="client2@clients.aa", password="client2psw")
+cl_complekt = create_client(name='ООО "Комплект-Поставка"', username="client3", email="client3@clients.aa", password="client3psw")
+cl_mns77 = create_client(name='ООО "МНС77"', username="client4", email="client4@clients.aa", password="client4psw")
+cl_ranskij_lph = create_client(name='ООО "Ранский ЛПХ"', username="client5", email="client5@clients.aa", password="client5psw")
+cl_rmk = create_client(name='ООО "РМК"', username="client6", email="client6@clients.aa", password="client6psw")
+cl_fpk_21 = create_client(name='ООО "ФПК21"', username="client7", email="client7@clients.aa", password="client7psw")
+
+# Service companies
+sc_prom_tech = create_service_company(name="ООО Промышленная техника", description="Description 1", username="sc1", email="sc1@scs.aa", password="sc1psw")
+sc_silant = create_service_company(name="ООО Силант", description="Description 2", username="sc2", email="sc2@scs.aa", password="sc2psw")
+sc_fns = create_service_company(name="ООО ФНС", description="Description 3", username="sc3", email="sc3@scs.aa", password="sc3psw")
+
+# Managers
+create_manager(first_name="Иван", last_name="Иванов", username="manager1", email="manager1@managers.aa", password="manager1psw", first_name="Кабан", last_name="Кабаныч")
+
+# Car models
+CarModel.objects.all().delete()
+
+cm_pg_1_5 = CarModel.objects.create(name="ПГ1,5")
+cm_pd_1_5 = CarModel.objects.create(name="ПД1,5")
+cm_pd_2_0 = CarModel.objects.create(name="ПД2,0")
+cm_pd_2_5 = CarModel.objects.create(name="ПД2,5")
+cm_pd_3_0 = CarModel.objects.create(name="ПД3,0")
+cm_pd_5_0 = CarModel.objects.create(name="ПД5,0")
+
+# Engine models
+EngineModel.objects.all().delete()
+
+em_kubota_d = EngineModel.objects.create(name="Kubota D1803")
+em_kubota_v = EngineModel.objects.create(name="Kubota V3300")
+em_mmz_4_d = EngineModel.objects.create(name="MMZ-4D")
+em_nissan = EngineModel.objects.create(name="Nissan K21")
+em_mmz_d_243 = EngineModel.objects.create(name="ММЗ Д-243")
+
+# Transmission models
+TransmissionModel.objects.all().delete()
+
+tm_10_va = TransmissionModel.objects.create(name="10VA-00105")
+tm_10_vb = TransmissionModel.objects.create(name="10VB-00106")
+tm_hf_30 = TransmissionModel.objects.create(name="HF30-VP010")
+tm_hf_50 = TransmissionModel.objects.create(name="HF50-VP020")
+
+# Main bridge models
+MainBridgeModel.objects.all().delete()
+
+mbm_20_va = MainBridgeModel.objects.create(name="20VA-00101")
+mbm_20_vb = MainBridgeModel.objects.create(name="20VB-00102")
+mbm_ha_30 = MainBridgeModel.objects.create(name="HA30-02020")
+mbm_ha_50 = MainBridgeModel.objects.create(name="HA50-VP010")
+
+# Steerable bridge models
+SteerableBridgeModel.objects.all().delete()
+
+sbm_b_350 = SteerableBridgeModel.objects.create(name="B350655A")
+sbm_vs_20 = SteerableBridgeModel.objects.create(name="VS20-00001")
+sbm_vs_30 = SteerableBridgeModel.objects.create(name="VS30-00001")
+
+# Maintanence types
+MaintenanceType.objects.all().delete()
+
+mt_to_0 = MaintenanceType.objects.create(name="ТО-0 (50 м/час)")
+mt_to_1 = MaintenanceType.objects.create(name="ТО-1 (200 м/час)")
+mt_to_2 = MaintenanceType.objects.create(name="ТО-2 (400 м/час)")
+mt_to_4 = MaintenanceType.objects.create(name="ТО-4 (1000м/час)")
+mt_to_5 = MaintenanceType.objects.create(name="ТО-5 (2000м/час)")
+
+# Failure nodes
+FailureNode.objects.all().delete()
+
+fn_main_bridge = FailureNode.objects.create(name="Ведущий мост")
+fn_hydro_system = FailureNode.objects.create(name="Гидросистема")
+fn_engine = FailureNode.objects.create(name="Двигатель")
+fn_elevator = FailureNode.objects.create(name="Подъёмное устройство")
+fn_transmission = FailureNode.objects.create(name="Трансмиссия")
+fn_steerable_bridge = FailureNode.objects.create(name="Управляемый мост")
+
+# Recovery methods
+RecoveryMethod.objects.all().delete()
+
+rm_change = RecoveryMethod.objects.create(name="Замена узла")
+rm_repair = RecoveryMethod.objects.create(name="Ремонт узла")
+
+# Cars
+Car.objects.all().delete()
+
+# Car 1
+car_0017 = Car.objects.create(car_model=cm_pd_1_5, car_num="0017", engine_model=em_kubota_d, engine_num="7ML1035", transmission_model=tm_10_va, transmission_num="21D0108251",
+	main_bridge_model=mbm_20_va, main_bridge_num="21D0107997", steerable_bridge_model=sbm_vs_20, steerable_bridge_num="21D0093265", 
+    supply_agreement="N 1", factory_shipment_date="2022-03-09", client=cl_trudnikov, consignee='ИП Трудников С.В.', shipment_address="п. Знаменский, Респ. Марий Эл",
+    add_options="1. Гидролинии с БРС;\n2. Дополнительеная установка кабины", 
+    service_company=sc_prom_tech)
+
+# Car2
+car_0021 = Car.objects.create(car_model=cm_pd_5_0, car_num="0021", engine_model=em_mmz_d_243, engine_num="112890", transmission_model=tm_hf_50, transmission_num="20H0066",
+	main_bridge_model=mbm_ha_50, main_bridge_num="20H0039", steerable_bridge_model=sbm_b_350, steerable_bridge_num="KDBAC9685", 
+    supply_agreement="N 2", factory_shipment_date="2022-01-14", client=cl_fpk_21, consignee='ООО "ДЭТ №13"', shipment_address="с. Акуловка, Московская обл.",
+    add_options="Стандарт", 
+    service_company=sc_silant)
+
+# Car 3
+car_0027 = Car.objects.create(car_model=cm_pd_5_0, car_num="0027", engine_model=em_mmz_d_243, engine_num="167733", transmission_model=tm_hf_50, transmission_num="20H0070",
+	main_bridge_model=mbm_ha_50, main_bridge_num="20H0049", steerable_bridge_model=sbm_b_350, steerable_bridge_num="KDBAH6583", 
+    supply_agreement="N 3", factory_shipment_date="2022-04-28", client=cl_mns77, consignee='ООО "Мосгоррест"', shipment_address="г. Санкт-Петербург",
+    add_options="1. Кабина с отопителем", 
+    service_company=sc_prom_tech)
+
+
+# Car 4
+car_0032 = Car.objects.create(car_model=cm_pd_3_0, car_num="0032", engine_model=em_kubota_v, engine_num="2MU2983", transmission_model=tm_10_vb, transmission_num="21K0116785",
+	main_bridge_model=mbm_20_vb, main_bridge_num="21K0115910", steerable_bridge_model=sbm_vs_30, steerable_bridge_num="00070422", 
+    supply_agreement="N 4", factory_shipment_date="2022-05-27", client=cl_fpk_21, consignee='ФРП России', shipment_address="г. Челябинск, в/ч",
+    add_options="1. Кабина с отопителем;\n2. Медицинская аптечка;\n3. Проблесковый маячок;\n4. Знак аварийной остановки;\n5. Огнетушитель порошковый 5п;", 
+    service_company=sc_prom_tech)
+
+# Car 5
+car_0003 = Car.objects.create(car_model=cm_pd_3_0, car_num="0003", engine_model=em_kubota_v, engine_num="2ME0639", transmission_model=tm_10_vb, transmission_num="21D0108264",
+	main_bridge_model=mbm_20_vb, main_bridge_num="21D0107988", steerable_bridge_model=sbm_vs_30, steerable_bridge_num="0821004", 
+    supply_agreement="N 5", factory_shipment_date="2021-09-30", client=cl_ranskij_lph, consignee='ООО "Ранский ЛПХ"', shipment_address="п. Опарино, Кировская обл.",
+    add_options="Стандарт", 
+    service_company=sc_silant)
+
+# Car 6
+car_0016 = Car.objects.create(car_model=cm_pg_1_5, car_num="0016", engine_model=em_nissan, engine_num="049827", transmission_model=tm_10_va, transmission_num="21D0108256",
+	main_bridge_model=mbm_20_va, main_bridge_num="21D0108000", steerable_bridge_model=sbm_vs_20, steerable_bridge_num="21D0093244", 
+    supply_agreement="N 6", factory_shipment_date="2021-12-20", client=cl_complekt, consignee='ООО "ГП СПБ"', shipment_address="г. Санкт-Петербург",
+    add_options="1. Кабина с отопителем;\n2. Каретка смещения + гидролинии;", 
+    service_company=sc_prom_tech)
+
+# Car 7
+car_0039 = Car.objects.create(car_model=cm_pd_2_0, car_num="0039", engine_model=em_mmz_4_d, engine_num="000015", transmission_model=tm_hf_30, transmission_num="22B0001",
+	main_bridge_model=mbm_ha_30, main_bridge_num="22B3364", steerable_bridge_model=sbm_vs_20, steerable_bridge_num="00010622", 
+    supply_agreement="N 7", factory_shipment_date="2022-07-18", client=cl_rmk, consignee='ФСН России', shipment_address="г. Москва",
+    add_options="1. Высота подъёма вил - 4 500мм;\n2. Кабина с отопителем;\n3. Шины суперэластик;\n4. Прибор комбинированный КД8235;", 
+    service_company=sc_prom_tech)
+
+# Car 8
+car_0045 = Car.objects.create(car_model=cm_pd_2_5, car_num="0045", engine_model=em_mmz_4_d, engine_num="000003", transmission_model=tm_hf_30, transmission_num="22B0008",
+	main_bridge_model=mbm_ha_30, main_bridge_num="22B3370", steerable_bridge_model=sbm_vs_20, steerable_bridge_num="00200622", 
+    supply_agreement="N 8", factory_shipment_date="2022-08-30", client=cl_zander, consignee='АО Зандер', shipment_address="г. Краснодар",
+    add_options="1. Кабина с отопителем;\n2. Каретка бокового смещения 1050мм;\n3. Блокировка реверса хода;\n4. Высота подъёма вил - 4800мм;\n5. Прибор комбинированный КД8235;", 
+    service_company=sc_prom_tech)
+
+# Car 9
+car_0019 = Car.objects.create(car_model=cm_pd_5_0, car_num="0019", engine_model=em_mmz_d_243, engine_num="112893", transmission_model=tm_hf_50, transmission_num="20H0069",
+	main_bridge_model=mbm_ha_50, main_bridge_num="20H0041", steerable_bridge_model=sbm_b_350, steerable_bridge_num="KDBAC9687", 
+    supply_agreement="N 9", factory_shipment_date="2022-01-28", client=cl_fpk_21, consignee='АО "Т-Минус"', shipment_address="г. Первоуральск, Свердловской обл.",
+    add_options="1. Высота подъёма вил - 4 500мм;\n2. Центральный цилиндр подъёма ;\n3. Кабина с отопителем;\n4. Стрела безблочная Г-образная;", 
+    service_company=sc_fns)
+
+# Car 10
+car_0008 = Car.objects.create(car_model=cm_pd_3_0, car_num="0008", engine_model=em_kubota_v, engine_num="2ME0753", transmission_model=tm_10_vb, transmission_num="21D0108269",
+	main_bridge_model=mbm_20_vb, main_bridge_num="21D0108011", steerable_bridge_model=sbm_vs_30, steerable_bridge_num="0821005", 
+    supply_agreement="N 10", factory_shipment_date="2021-09-30", client=cl_complekt, consignee='ООО "ГП Краснодар"', shipment_address="г. Краснодар",
+    add_options="1. Гидролинии с БРС;\n2. Дополнительеная установка кабины", 
+    service_company=sc_fns)
+
+# Maintenance
+Maintenance.objects.all().delete()
+
+# Car 0003 - TO 0
+Maintenance.objects.create(car=car_0003, type=mt_to_0, maintenance_date="2021-10-05", operating_time=55, 
+    work_order_num="#2022-32КЕ5СИЛ", work_order_date="2021-10-03", service_company=sc_prom_tech)
+
+# Car 0003 - TO 1
+Maintenance.objects.create(car=car_0003, type=mt_to_1, maintenance_date="2021-11-02", operating_time=220, 
+    work_order_num="#2022-81КЕ66СИЛ", work_order_date="2021-12-08", service_company=sc_prom_tech)
+
+# Car 0003 - TO 2
+Maintenance.objects.create(car=car_0003, type=mt_to_2, maintenance_date="2021-12-10", operating_time=450, 
+    work_order_num="#2022-72КЕ68СИЛ", work_order_date="2021-12-08", service_company=sc_prom_tech)
+
+# Car 0003 - TO 4
+Maintenance.objects.create(car=car_0003, type=mt_to_4, maintenance_date="2022-02-13", operating_time=1054, 
+    work_order_num="#2022-56КЕ54СИЛ", work_order_date="2022-02-11", service_company=sc_prom_tech)
+
+# Car 0003 - TO 5
+Maintenance.objects.create(car=car_0003, type=mt_to_5, maintenance_date="2022-09-01", operating_time=2053, 
+    work_order_num="#2022-99КЕ12СИЛ", work_order_date="2022-08-30", service_company=sc_prom_tech)                
+
+# Car 0008 - TO 0
+Maintenance.objects.create(car=car_0008, type=mt_to_0, maintenance_date="2021-10-05", operating_time=54, 
+    work_order_num="#2022-97КЕ18СИЛ", work_order_date="2021-10-03", service_company=sc_fns)
+
+# Car 0008 - TO 1
+Maintenance.objects.create(car=car_0008, type=mt_to_1, maintenance_date="2021-11-02", operating_time=225, 
+    work_order_num="#2022-54КЕ17СИЛ", work_order_date="2021-10-31", service_company=sc_fns)
+
+# Car 0008 - TO 2
+Maintenance.objects.create(car=car_0008, type=mt_to_2, maintenance_date="2021-12-10", operating_time=422, 
+    work_order_num="#2022-97КЕ11СИЛ", work_order_date="2021-12-08", service_company=sc_fns)
+
+# Car 0008 - TO 4
+Maintenance.objects.create(car=car_0008, type=mt_to_4, maintenance_date="2022-02-13", operating_time=1026, 
+    work_order_num="#2022-88КЕ66СИЛ", work_order_date="2022-02-11", service_company=sc_fns)
+
+# Car 0008 - TO 5
+Maintenance.objects.create(car=car_0008, type=mt_to_5, maintenance_date="2022-09-01", operating_time=2025, 
+    work_order_num="#2022-50КЕ10СИЛ", work_order_date="2022-08-30", service_company=sc_fns)
+
+# Car 0016 - TO 0
+Maintenance.objects.create(car=car_0016, type=mt_to_0, maintenance_date="2021-12-25", operating_time=53, 
+    work_order_num="#2022-77КЕ66СИЛ", work_order_date="2021-12-23", service_company=sc_silant)
+
+# Car 0016 - TO 1
+Maintenance.objects.create(car=car_0016, type=mt_to_1, maintenance_date="2022-01-22", operating_time=221, 
+    work_order_num="#2022-96КЕ82СИЛ", work_order_date="2022-01-20", service_company=sc_silant)
+
+# Car 0016 - TO 2
+Maintenance.objects.create(car=car_0016, type=mt_to_2, maintenance_date="2022-03-01", operating_time=407, 
+    work_order_num="#2022-16КЕ6СИЛ", work_order_date="2022-02-27", service_company=sc_silant)
+
+# Car 0016 - TO 4
+Maintenance.objects.create(car=car_0016, type=mt_to_4, maintenance_date="2022-05-05", operating_time=1011, 
+    work_order_num="#2022-22КЕ87СИЛ", work_order_date="2022-05-03", service_company=None)
+
+# Car 0016 - TO 5
+Maintenance.objects.create(car=car_0016, type=mt_to_5, maintenance_date="2022-11-21", operating_time=2010, 
+    work_order_num="#2022-78КЕ54СИЛ", work_order_date="2022-11-19", service_company=None)
+
+# Car 0017 - TO 0
+Maintenance.objects.create(car=car_0017, type=mt_to_0, maintenance_date="2022-03-14", operating_time=53, 
+    work_order_num="#2022-70КЕ87СИЛ", work_order_date="2022-03-12", service_company=None)
+
+# Car 0017 - TO 1
+Maintenance.objects.create(car=car_0017, type=mt_to_1, maintenance_date="2022-04-11", operating_time=210, 
+    work_order_num="#2022-16КЕ87СИЛ", work_order_date="2022-04-09", service_company=None)
+
+# Car 0017 - TO 2
+Maintenance.objects.create(car=car_0017, type=mt_to_2, maintenance_date="2022-05-19", operating_time=405, 
+    work_order_num="#2022-77КЕ23СИЛ", work_order_date="2022-05-17", service_company=None)
+
+# Car 0019 - TO 0
+Maintenance.objects.create(car=car_0019, type=mt_to_0, maintenance_date="2022-02-02", operating_time=55, 
+    work_order_num="#2022-6КЕ38СИЛ", work_order_date="2022-01-31", service_company=sc_fns)
+
+# Car 0019 - TO 1
+Maintenance.objects.create(car=car_0019, type=mt_to_1, maintenance_date="2022-03-02", operating_time=219, 
+    work_order_num="#2022-38КЕ68СИЛ", work_order_date="2022-02-28", service_company=sc_fns)
+
+# Car 0019 - TO 2
+Maintenance.objects.create(car=car_0019, type=mt_to_2, maintenance_date="2022-04-09", operating_time=405, 
+    work_order_num="#2022-34КЕ62СИЛ", work_order_date="2022-04-07", service_company=sc_fns)
+
+# Car 0021 - TO 0
+Maintenance.objects.create(car=car_0021, type=mt_to_0, maintenance_date="2022-01-19", operating_time=52, 
+    work_order_num="#2022-27КЕ67СИЛ", work_order_date="2022-01-17", service_company=sc_silant)
+
+# Car 0021 - TO 1
+Maintenance.objects.create(car=car_0021, type=mt_to_1, maintenance_date="2022-02-16", operating_time=221, 
+    work_order_num="#2022-5КЕ78СИЛ", work_order_date="2022-02-14", service_company=sc_silant)
+
+# Car 0021 - TO 1
+Maintenance.objects.create(car=car_0021, type=mt_to_2, maintenance_date="2022-03-26", operating_time=403, 
+    work_order_num="#2022-42КЕ6СИЛ", work_order_date="2022-03-24", service_company=sc_silant)
+
+# Car 0027 - TO 0
+Maintenance.objects.create(car=car_0027, type=mt_to_0, maintenance_date="2022-05-03", operating_time=52, 
+    work_order_num="#2022-21КЕ82СИЛ", work_order_date="2022-05-01", service_company=sc_prom_tech)
+
+# Car 0027 - TO 1
+Maintenance.objects.create(car=car_0027, type=mt_to_1, maintenance_date="2022-05-31", operating_time=214, 
+    work_order_num="#2022-31КЕ19СИЛ", work_order_date="2022-05-29", service_company=sc_prom_tech)
+
+# Car 0027 - TO 2
+Maintenance.objects.create(car=car_0027, type=mt_to_2, maintenance_date="2022-07-08", operating_time=441, 
+    work_order_num="#2022-84КЕ73СИЛ", work_order_date="2022-07-06", service_company=sc_prom_tech)
+
+# Car 0032 - TO 0
+Maintenance.objects.create(car=car_0032, type=mt_to_0, maintenance_date="2022-06-01", operating_time=55, 
+    work_order_num="#2022-10КЕ19СИЛ", work_order_date="2022-05-30", service_company=sc_silant)
+
+# Car 0032 - TO 1
+Maintenance.objects.create(car=car_0032, type=mt_to_1, maintenance_date="2022-06-29", operating_time=216, 
+    work_order_num="#2022-92КЕ16СИЛ", work_order_date="2022-06-27", service_company=sc_silant)
+
+# Car 0032 - TO 2
+Maintenance.objects.create(car=car_0032, type=mt_to_2, maintenance_date="2022-08-06", operating_time=434, 
+    work_order_num="#2022-55КЕ37СИЛ", work_order_date="2022-08-04", service_company=sc_silant)
+
+# Car 0039 - TO 0
+Maintenance.objects.create(car=car_0039, type=mt_to_0, maintenance_date="2022-07-23", operating_time=54, 
+    work_order_num="#2022-72КЕ89СИЛ", work_order_date="2022-07-21", service_company=None)
+
+# Car 0039 - TO 1
+Maintenance.objects.create(car=car_0039, type=mt_to_1, maintenance_date="2022-08-20", operating_time=206, 
+    work_order_num="#2022-26КЕ57СИЛ", work_order_date="2022-08-18", service_company=None)
+
+# Car 0039 - TO 2
+Maintenance.objects.create(car=car_0039, type=mt_to_2, maintenance_date="2022-09-27", operating_time=407, 
+    work_order_num="#2022-54КЕ66СИЛ", work_order_date="2022-09-25", service_company=None)
+
+# Car 0045 - TO 0
+Maintenance.objects.create(car=car_0045, type=mt_to_0, maintenance_date="2022-09-04", operating_time=53, 
+    work_order_num="#2022-58КЕ94СИЛ", work_order_date="2022-09-02", service_company=None)
+
+# Car 0045 - TO 1
+Maintenance.objects.create(car=car_0045, type=mt_to_1, maintenance_date="2022-10-02", operating_time=202, 
+    work_order_num="#2022-98КЕ93СИЛ", work_order_date="2022-09-30", service_company=None)
+
+# Car 0045 - TO 2
+Maintenance.objects.create(car=car_0045, type=mt_to_2, maintenance_date="2022-11-09", operating_time=402, 
+    work_order_num="#2022-82КЕ69СИЛ", work_order_date="2022-11-07", service_company=None)
+
+# Reclamation
+Reclamation.objects.all().delete()
+
+# Reclamation 1
+Reclamation.objects.all().create(car=car_0017, failure_date="2022-04-01", operating_time=123, failure_node=fn_engine, failure_description="повышенный шум",
+    recovery_method=rm_repair, repair_parts="прокладки, прочие материалы", recovery_date="2022-04-08")
+
+# Reclamation 2
+Reclamation.objects.all().create(car=car_0017, failure_date="2022-04-02", operating_time=129, failure_node=fn_transmission, failure_description="проскальзывание",
+    recovery_method=rm_repair, repair_parts="шестерня ведущая", recovery_date="2022-04-07")
+
+# Reclamation 3
+Reclamation.objects.all().create(car=car_0017, failure_date="2022-03-30", operating_time=112, failure_node=fn_transmission, failure_description="блокировка колес",
+    recovery_method=rm_change, repair_parts="", recovery_date="2022-03-31")
+
+# Reclamation 4
+Reclamation.objects.all().create(car=car_0021, failure_date="2022-02-06", operating_time=123, failure_node=fn_main_bridge, failure_description="блокировка колес",
+    recovery_method=rm_repair, repair_parts="колесо", recovery_date="2022-02-11")
+
+# Reclamation 5
+Reclamation.objects.all().create(car=car_0027, failure_date="2022-05-05", operating_time=38, failure_node=fn_steerable_bridge, failure_description="разрушение подшипника",
+    recovery_method=rm_repair, repair_parts="подшипник", recovery_date="2022-05-07")
+
+# Reclamation 6
+Reclamation.objects.all().create(car=car_0032, failure_date="2022-06-17", operating_time=112, failure_node=fn_steerable_bridge, failure_description="разрушение подшипника",
+    recovery_method=rm_repair, repair_parts="подшипник", recovery_date="2022-06-25")
+
+# Reclamation 7
+Reclamation.objects.all().create(car=car_0003, failure_date="2021-10-26", operating_time=142, failure_node=fn_steerable_bridge, failure_description="разрушение подшипника",
+    recovery_method=rm_repair, repair_parts="подшипник", recovery_date="2021-11-02")
+
+# Reclamation 8
+Reclamation.objects.all().create(car=car_0016, failure_date="2021-12-31", operating_time=61, failure_node=fn_elevator, failure_description="разрушение верхнего ролика",
+    recovery_method=rm_repair, repair_parts="ролик", recovery_date="2022-01-05")
+
+# Reclamation 9
+Reclamation.objects.all().create(car=car_0039, failure_date="2022-07-28", operating_time=56, failure_node=fn_engine, failure_description="течь масла",
+    recovery_method=rm_repair, repair_parts="прокладки", recovery_date="2022-08-01")
+
+# Reclamation 10
+Reclamation.objects.all().create(car=car_0045, failure_date="2022-09-07", operating_time=47, failure_node=fn_hydro_system, failure_description="течь масла",
+    recovery_method=rm_repair, repair_parts="прокладки", recovery_date="2022-09-09")
+
+# Reclamation 11
+Reclamation.objects.all().create(car=car_0019, failure_date="2022-02-01", operating_time=22, failure_node=fn_engine, failure_description="не заводится",
+    recovery_method=rm_change, repair_parts="", recovery_date="2022-02-10")
+
+# Reclamation 12
+Reclamation.objects.all().create(car=car_0008, failure_date="2021-10-11", operating_time=59, failure_node=fn_engine, failure_description="течь масла",
+    recovery_method=rm_repair, repair_parts="прокладки", recovery_date="2021-10-21")

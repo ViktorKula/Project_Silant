@@ -1,0 +1,58 @@
+@import "../../../styles/commonTypes.scss";
+
+.menu_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    max-width: 1440px;
+    width: 100%;
+    height: 40px;
+
+    background-color: $color_red;
+    border: 2px solid $color_blue;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 12px;
+
+    font-family: $fontname;
+    display: flex; 
+    // color: $color_white;
+    // @include only_desktop_flex;
+    // gap: 11px;
+    align-items: center;
+    // justify-content: center;
+    justify-content: space-around;
+
+    // border: 1px solid purple;
+}
+
+.item {
+    font-family: $fontname;
+    font-size: 20px;
+    text-decoration: none;
+    
+    cursor: pointer;
+    color: $color_white;
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+// .item {
+//     font-family: Inter;
+//     font-size: 14px;
+//     font-weight: 400;
+//     line-height: 16.94px;
+//     letter-spacing: 0.01em;
+//     /* text-align: left;    */
+
+//     // border: 1px solid blue;
+//     color: black;
+//     text-decoration: none;
+// }

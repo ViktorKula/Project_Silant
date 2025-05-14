@@ -1,0 +1,78 @@
+@import "../../styles/commonTypes.scss";
+
+.header_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    max-width: 1440px;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: $color_blue;
+    border: 2px solid $color_red;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    // margin-bottom: 12px;
+    margin-bottom: 4px;
+
+    @media (max-width: 420px) {
+        height: 180px;
+    }
+
+    .header_title h1{
+        font-family: $fontname;
+        font-size: 24px;
+        color: $color_white;
+
+        @media (max-width: 420px) {
+            font-size: 16px;
+        }
+    }
+
+    .header_sub_title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header_sub_title h2{
+        font-family: $fontname;
+        font-size: 18px;
+        color: $color_white;
+
+        @media (max-width: 420px) {
+            font-size: 12px;
+        }
+    }
+
+    .upper {
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        
+        @media (max-width: 560px) {
+            flex-direction: column;
+        }
+        @media (max-width: 420px) {
+            height: 150px;
+        }
+    }
+
+    .logo_div {
+        display: block;
+        @media (max-width: 930px) {
+            display: none;
+        }
+    }
+}

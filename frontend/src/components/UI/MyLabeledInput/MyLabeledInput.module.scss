@@ -1,0 +1,61 @@
+@import "../../../styles/commonTypes.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    // background-color: red;
+}
+
+.label_container {
+    display: flex;
+    align-items: flex-end;
+
+    .label_normal {
+        color: $color_red;
+        font-family: $fontname;
+        font-size: 16px;
+        
+        margin-bottom: 3px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.input_normal {
+    font-family: $fontname;
+    font-size: 16px;
+    color: $color_blue;
+
+    border: none;
+    outline: 1px solid $color_blue;
+
+    padding-left: 3px;
+    height: 22px;
+    margin-bottom: 4px;
+
+    &:focus {
+        outline: 2px solid $color_blue;
+        border: none;
+    }
+}
+
+.input_error {
+    font-family: $fontname;
+    font-size: 16px;
+    color: $color_red;
+
+    border: none;
+    outline: 1px solid $color_red;
+
+    padding-left: 3px;
+    height: 22px;
+    margin-bottom: 4px;
+
+    &:focus {
+        outline: 2px solid $color_red;
+        border: none;
+    }
+}

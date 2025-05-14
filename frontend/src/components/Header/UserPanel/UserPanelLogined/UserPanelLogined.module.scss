@@ -1,0 +1,48 @@
+@import "../../../../styles/commonTypes.scss";
+
+.user_panel_logined {
+    width: 250px;
+    height: 100px;
+
+    border: 1px solid $color_red;
+    border-radius: 5px;
+
+    font-family: $fontname;
+    margin-right: 10px;
+
+    // padding: 5px;
+    padding: 10px 10px 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .account_data {
+        .name {
+            // cursor: pointer;
+            color: $color_red;
+            font-size: 18px;
+    
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    
+        .caption {
+            // cursor: pointer;
+            color: $color_white;
+            font-size: 16px;
+        }
+    }
+
+    .logoff_link {
+        // color: $color_blue;
+        cursor: pointer;
+        color: $color_white;
+        font-size: 14px;
+        margin-top: 20px;
+
+        // align-self: flex-end;
+        // justify-self: flex-end;
+    }
+}

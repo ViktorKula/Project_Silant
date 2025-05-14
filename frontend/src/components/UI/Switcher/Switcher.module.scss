@@ -1,0 +1,79 @@
+@import "../../../styles/commonTypes.scss";
+
+.list {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+    @media screen and (min-width: $mobile_width)  {
+        gap: 15px;
+    }
+}
+
+@mixin item($selected) {
+    $used_color: red;
+    @if $selected {
+        $used_color: $color_teal;
+    } @else {
+        $used_color: #C7C7C7;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    color: $used_color;
+
+    font-family: $fontname2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.02em;
+
+    min-width: 100px;    
+
+    @media screen and (min-width: $mobile_width)  {
+        font-size: 16px;
+        line-height: 19.36px;
+        min-width: 150px;    
+    }
+
+    // @if $selected {
+    //     color: $color_teal;
+    // } @else {
+    //     color: #C7C7C7;
+    // }
+
+    hr {
+        border: none;
+        background-color: $used_color;
+        width: 100%;
+        height: 2px;
+
+        margin-top: 10px;
+        @media screen and (min-width: $mobile_width)  {
+            margin-top: 8px;
+        }        
+    }
+
+    .caption_container {
+        display: flex;
+        
+        .caption_wrapper {
+            min-width: 17px;
+            @media screen and (min-width: $mobile_width)  {
+                min-width: 22px;
+            }    
+        }
+    }
+}
+
+.item {
+    @include item(false);
+}
+
+.item_selected {
+    @include item(true);
+}

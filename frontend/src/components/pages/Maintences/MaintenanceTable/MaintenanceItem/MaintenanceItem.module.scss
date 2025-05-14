@@ -1,0 +1,75 @@
+@import "../../../../../styles/commonTypes.scss";
+
+.id {
+    @include table_cell;
+    // width: 40px;
+    flex: 0 0 40px;
+}
+
+.car__num {
+    @include table_cell;
+    // width: 70px;
+    flex: 1 1 70px;
+}
+
+.type__name {
+    @include table_cell;
+    // width: 120px;
+    flex: 1 1 120px;
+
+    @media (max-width: 520px) {
+        display: none;
+    }  
+}
+
+.maintenance_date {
+    @include table_cell;
+    // width: 140px;
+    flex: 1 1 140px;
+
+    @media (max-width: 400px) {
+        // width: 100px;
+        // flex: 1 1 100px;
+    }      
+}
+
+.operating_time_s {
+    @include table_cell;
+    // width: 120px;
+    flex: 1 1 120px;
+
+    @media (max-width: 880px) {
+        display: none;
+    }    
+}
+
+.work_order_num {
+    @include table_cell;
+    // width: 120px;
+    flex: 1 1 120px;
+
+    @media (max-width: 640px) {
+        display: none;
+    }     
+}
+
+.work_order_date {
+    @include table_cell;
+    // width: 120px;
+    flex: 1 1 120px;
+
+    @media (max-width: 760px) {
+        display: none;
+    }    
+}
+
+.service_company__name {
+    @include table_cell;
+    // width: 140px;
+    flex: 1 1 140px;
+
+    @media (max-width: 400px) {
+        // width: 120px;
+        // flex: 1 1 120px;
+    }  
+}

@@ -1,0 +1,18 @@
+@import "../../../styles/commonTypes.scss";
+
+.sort_button {
+    width: 20px;
+    height: 20px;
+
+    // border: 1px solid $color_red;
+    background-color: $color_red;
+
+    cursor: pointer;
+    font-family: $fontname;
+    font-size: 20px;
+    color: $color_white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

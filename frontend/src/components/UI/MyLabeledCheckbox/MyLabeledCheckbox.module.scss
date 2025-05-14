@@ -1,0 +1,61 @@
+@import "../../../styles/commonTypes.scss";
+
+
+.main_container {
+    margin-top: 15px;
+}
+
+.container {
+    font-family: $fontname2;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    letter-spacing: 0.03em;
+
+    position: relative;
+    cursor: pointer;
+    
+    padding-left: 37px;
+
+    // display: flex;
+    // align-items: center;
+    // align-content: center;
+    // justify-content: center;
+
+    // margin-top: 15px;
+
+    input {
+        // margin: 15px 17px 0 0;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 1;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        // background-color: red;
+        border: 1px solid $color_black;
+
+        // opacity: 1.0;
+        // background-image: url("checkbox-inner.png");
+        // background-position: center;
+        // background-repeat: no-repeat;
+        opacity: 0.4;
+        background-image: none;
+    }
+
+    input:checked ~ .checkmark {
+        // border: 1px solid $color_black;
+
+        opacity: 1.0;
+        background-image: url("checkbox-inner.png");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
