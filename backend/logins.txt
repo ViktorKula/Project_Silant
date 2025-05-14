@@ -1,0 +1,22 @@
+Admin
+Login: admin
+password: admin
+
+Managers
+Login: manager
+password: managerpsw
+
+Clients
+Login: client1 password: client1psw
+Login: client2 password: client1psw
+Login: client3 password: client1psw
+Login: client4 password: client1psw
+Login: client5 password: client1psw
+Login: client6 password: client1psw
+Login: client7 password: client1psw
+
+Service companies
+Login: sc1 password: sc1psw
+Login: sc2 password: sc2psw
+Login: sc3 password: sc3psw
+
