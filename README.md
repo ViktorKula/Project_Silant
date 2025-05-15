@@ -2,7 +2,7 @@
   <img src="https://github.com/ViktorKula/Project_Silant/blob/main/frontend/src/img/Header/logo.module.png" width="250"/>
 </div>
 
-### Backend starting (console 1):
+### Backend starting:
 
 ```
 cd backend
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-### Fronend starting (console 2):
+### Fronend starting:
 ```
 cd frontend
 ```
